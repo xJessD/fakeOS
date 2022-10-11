@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "Catull Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Catull Regular"), url("./assets/Catull.woff") format("woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 25px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  background-image: url("./assets/wallpaper_kepler.jpg");
+  background-position: center;
+  background-size: 200%;
+  border: 5px solid white;
+  box-shadow: 0 0 20px #DDD;
+  height: 90vh;
+  aspect-ratio: 9/16;
+  min-height: 700px;
+}
+
+.actionBar {
+  background-color: rgb(0, 0, 0);
+  color: #33B5E5;
+  height: 50px;
+}
+.actionBar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  height: 100%;
+  margin-right: 10px;
+}
+.actionBar ul li {
+  line-height: 75%;
+  margin-left: 5px;
+}
+.actionBar ul img {
+  filter: invert(100%);
+}
+
+.display {
+  height: calc(100% - 95px - 50px - 100px);
+}
+.display .search {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  padding: 10px 20px;
+  height: 55px;
+  width: 85%;
+  margin: 15px auto;
+  font-family: "Catull Regular";
+  font-size: 40px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.display .search img {
+  height: 35px;
+  filter: invert(1);
+}
+
+.dock {
+  border-top: 4px solid rgba(255, 255, 255, 0.4);
+  height: 100px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.dock img {
+  height: 80px;
+}
+
+.navigation {
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 95px;
+}
+.navigation img {
+  height: 75%;
+}

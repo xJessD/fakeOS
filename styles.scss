@@ -1,0 +1,115 @@
+$action-b-height: 50px;
+$nav-height: 95px;
+$ui-color: #33B5E5;
+
+@font-face {
+  font-family: 'Catull Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Catull Regular'), url('./assets/Catull.woff') format('woff');
+  }
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 25px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  background-image: url("./assets/wallpaper_kepler.jpg");
+  background-position: center;
+  background-size: 200%;
+  border: 5px solid white;
+  box-shadow: 0 0 20px #DDD;
+  height: 90vh; // 1280px
+  aspect-ratio: 9 / 16 ;
+  min-height: 700px;
+}
+
+.actionBar {
+  background-color: rgba(0,0,0,1);
+  color: $ui-color;
+  height: 50px;
+
+  & ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    height: 100%;
+    margin-right: 10px;
+
+      & li {
+        line-height: 75%;
+        margin-left: 5px;
+      }
+
+      & img {
+        filter: invert(100%);
+      }
+  }
+
+
+}
+
+.display {
+  height: calc(100% - 95px - 50px - 100px);
+
+  & .search {
+    background-color: rgba( 255, 255, 255, .4);
+    border-radius: 5px;
+    padding: 10px 20px;
+    height: 55px;
+    width: 85%;
+    margin: 15px auto;
+    font-family: 'Catull Regular';
+    font-size: 40px;
+    color: white;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+    & img {
+      height: 35px;
+      filter: invert(1);
+    }
+    
+  }
+}
+
+.dock {
+  border-top: 4px solid rgba(255, 255, 255, 0.4);
+  height: 100px;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  & img {
+    height: 80px;
+  }
+}
+
+
+
+.navigation {
+  background-color: rgba(0,0,0, 1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 95px;
+
+  & img {
+    height: 75%;
+  }
+}
