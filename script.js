@@ -7,5 +7,5 @@ const time = () => {
   document.getElementById('clock').innerText =  `${today.getHours()}:${today.getMinutes()}`;
 }
 
-setInterval(time, 60000); // As we do not display the seconds, we can update every minute instead
+setInterval(time, 60000); // As we are not displaying the seconds, we can update every minute instead of every second.
 time();
