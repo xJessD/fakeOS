@@ -10,6 +10,15 @@ $ui-color: #33B5E5;
   src: local('Catull Regular'), url('./assets/Catull.woff') format('woff');
   }
 
+
+  @font-face {
+    font-family: 'android-icons';
+    src: url('../font/android-icons.eot?56898335'),
+         url('../font/android-icons.woff?56898335') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 * {
   margin: 0;
   padding: 0;
@@ -108,6 +117,43 @@ body {
     }
   }
 
+  & #dailerModal {
+    background-color: #FFF;
+    position: relative;
+    height: 100%;
+
+    &__content {
+      padding-top: 2%;
+      display: flex;
+      justify-content: space-around;
+
+      & .contact {
+        color: white;
+        background-color: orange;
+        width: 45%;
+        aspect-ratio: 3 / 2 ;
+        padding: 1%;
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        
+        & .profile {
+          margin: 5% 0;
+        }
+
+        & img.invert {
+          filter: invert(1);
+          width: 50%;
+        }
+
+        &__name {
+          width: 100%;
+
+        }
+      }
+    }
+  }
+
   & #ytModal {
     background-color: #F8F8F8;
     position: relative;
@@ -162,4 +208,19 @@ body {
 
 .hidden {
   display: none;
+}
+
+#extra {
+  background: #DDD;
+  color: #111;
+  position: fixed;
+  padding: 10px;
+  left: 3%;
+  bottom: 3%;
+
+  li {
+    font-size: 20px;
+  }
+
+  
 }
