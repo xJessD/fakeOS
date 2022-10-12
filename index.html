@@ -1,41 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-  <script src="./script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <title>Android FakeOS</title>
-</head>
-<body>
-  <div class="container">
-    <nav class="actionBar">
-      <ul>
-        <li class="wifi"><img src="./assets/Black_3_WifiBars@2x.png"></li>
-        <li class="mobileData"><img src="./assets/Black_4_Bars@2x.png"></li>
-        <li class="battery"><img src="./assets/Black_BatteryDrainingBG@2x.png"></li>
-        <li><div id="clock"></div></li>
-      </ul>
-    </nav>
-    <div class="display">
-      <div class="search">Google <img src="./assets/microphone icon png vector.png"></div>
-    </div>
-    
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Android FakeOS</title>
+  </head>
 
-    <nav class="dock">
-      <img src="./assets/Phone.png">
-      <img src="./assets/Messenger.png">
-      <img src="./assets/Drawer.png">
-      <img src="./assets/Gmail.png">
-      <img src="./assets/Youtube.png">
-    </nav>
-    <nav class="navigation">
-      <img src="./assets/nav_back_v2.png"><img src="./assets/nav_home_v2.png"><img src="./assets/nav_all_v2.png">
-  </nav>
-  </div>
-</body>
+  <body>
+    <div class="container">
+      <nav class="container__actionBar">
+        <ul>
+          <li class="wifi"><img src="./assets/Black_3_WifiBars@2x.png"></li>
+          <li class="mobileData"><img src="./assets/Black_4_Bars@2x.png"></li>
+          <li class="battery"><img src="./assets/Black_BatteryDrainingBG@2x.png"></li>
+          <li><div id="clock"></div></li>
+        </ul>
+      </nav><!-- actionBar end -->
+
+      <div class="display">
+        <div id="display__home" class="display__home modal " >
+
+          <div class="search">Google <img src="./assets/icons8-microphone-96.png"></div>
+
+          <nav class="dock">
+            <img src="./assets/Phone.png">
+            <img src="./assets/Messenger.png">
+            <img src="./assets/Drawer.png">
+            <img src="./assets/Gmail.png">
+            <img src="./assets/Youtube.png" class="icon" id="ytIcon">
+          </nav><!-- dock end -->
+        </div><!-- display__home end -->
+
+        <div id="ytModal" class="modal hidden">
+          <div id="ytModal__content">
+            <iframe id="ytModal__content__video" src="https://www.youtube.com/embed/LDU_Txk06tM"></iframe>
+
+          <div id="ytModal__content__title">
+            <h2>
+              Noisestorm - Crab Rave [Monstercat Release]
+            </h2>
+            <p>213,341,352 views &bull; Apr 2, 2018</p>
+            <div>upvote & downvotes....</div>
+          </div>
+
+          <div id="ytModal__content__subs">
+            Prof image..... + sub button
+          </div>
+
+          <div id="ytModal__content__others">
+            Other videossss
+          </div>
+
+          </div>
+        </div>
+
+      </div><!-- display end -->
+      
+
+      
+      <nav class="navigation">
+        <img src="./assets/nav_back_v2.png">
+        <img id="navigation__home" src="./assets/nav_home_v2.png">
+        <img src="./assets/nav_all_v2.png">
+    </nav><!-- navigation end -->
+
+    </div>
+  </body>
 </html>
