@@ -16,6 +16,7 @@
     <div class="container">
       <nav class="container__actionBar">
         <ul>
+          <li></li>
           <li class="wifi"><img src="./assets/Black_3_WifiBars@2x.png"></li>
           <li class="mobileData"><img src="./assets/Black_4_Bars@2x.png"></li>
           <li class="battery"><img src="./assets/Black_BatteryDrainingBG@2x.png"></li>
@@ -24,18 +25,40 @@
       </nav><!-- actionBar end -->
 
       <div class="display">
-        <div id="display__home" class="display__home modal " >
+        <div id="display__home" class="display__home modal" >
 
           <div class="search">Google <img src="./assets/icons8-microphone-96.png"></div>
 
           <nav class="dock">
-            <img src="./assets/Phone.png">
+            <img src="./assets/Phone.png" id="dailerIcon">
             <img src="./assets/Messenger.png">
             <img src="./assets/Drawer.png">
             <img src="./assets/Gmail.png">
             <img src="./assets/Youtube.png" class="icon" id="ytIcon">
           </nav><!-- dock end -->
         </div><!-- display__home end -->
+
+        <div id="dailerModal" class="modal hidden">
+          <div id="dailerModal__content">
+
+            <div class="contact">
+              
+              <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
+              <div class="contact__name">
+                <h4>Jessica D</h4>
+                Mobile
+              </div>
+            </div> 
+
+            <div class="contact">
+              <div class="contact__name">
+                First Name
+                Mobile
+              </div>
+            </div> 
+          </div>
+        </div>
+
 
         <div id="ytModal" class="modal hidden">
           <div id="ytModal__content">
@@ -58,7 +81,7 @@
           </div>
 
           </div>
-        </div>
+        </div><!-- ytModal end-->
 
       </div><!-- display end -->
       
@@ -69,7 +92,6 @@
         <img id="navigation__home" src="./assets/nav_home_v2.png">
         <img src="./assets/nav_all_v2.png">
     </nav><!-- navigation end -->
-
     </div>
   </body>
 </html>
