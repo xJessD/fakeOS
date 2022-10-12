@@ -1,3 +1,4 @@
+
 $action-b-height: 50px;
 $nav-height: 95px;
 $ui-color: #33B5E5;
@@ -29,81 +30,126 @@ body {
   background-position: center;
   background-size: 100%;
   border: 5px solid white;
-  box-shadow: 0 0 20px #DDD;
+  box-shadow: 0 0 20px #AAA;
   height: 90vh; // 1280px
   aspect-ratio: 9 / 16 ;
   min-height: 750px;
-}
 
-.actionBar {
-  background-color: rgba(0,0,0,1);
-  color: $ui-color;
-  height: 50px;
-
-  & ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    align-items: center;
-    height: 100%;
-    margin-right: 10px;
-
-      & li {
-        line-height: 75%;
-        margin-left: 5px;
-      }
-
-      & img {
-        filter: invert(100%);
-      }
+  &__actionBar {
+    background-color: rgba(0,0,0,1);
+    color: $ui-color;
+    height: 50px;
+  
+    & ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: right;
+      align-items: center;
+      height: 100%;
+      margin-right: 10px;
+  
+        & li {
+          line-height: 75%;
+          margin-left: 5px;
+        }
+  
+        & img {
+          filter: invert(100%);
+        }
+    }
   }
-
-
 }
+
+
 
 .display {
-  height: calc(100% - 95px - 50px - 100px);
+  height: calc(100% - 95px - 50px);
 
-  & .search {
-    background-color: rgba( 255, 255, 255, .4);
-    border-radius: 5px;
-    padding: 10px 20px;
-    height: 55px;
-    width: 85%;
-    margin: 15px auto;
-    font-family: 'Catull Regular';
-    font-size: 40px;
-    color: white;
+  &__home {
+    //background-color: rgba(orange, .9);
+    height: 95%;
     display: flex;
-    justify-content:space-between;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    padding-top: 5%;
 
-    & img {
-      height: 35px;
-      filter: invert(1);
+    & .search {
+      background-color: rgba( 255, 255, 255, .4);
+      border-radius: 5px;
+      padding: 10px 20px;
+      height: 55px;
+      width: 85%;
+      font-family: 'Catull Regular';
+      font-size: 40px;
+      color: white;
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+  
+      & img {
+        height: 35px;
+        filter: invert(1); // if there's time recolor in PS instead
+      }
     }
+  
+    & .dock {
+      border-top: 4px solid rgba(255, 255, 255, 0.4);
+      height: 100px;
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
     
+      & img {
+        height: 80px;
+      }
+    }
+  }
+
+  & #ytModal {
+    background-color: #F8F8F8;
+    position: relative;
+    height: 100%;
+    z-index: 100;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__video {
+        margin-top: 2%;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+      }
+
+      &__title {
+        margin-top: 2%;
+        box-shadow: 0 0 10px #EEE;
+        padding: 10px;
+        width: 92%;
+        background-color: #FFF;
+
+        & h2 {
+          font-weight: normal;
+          padding: 10px;
+        }
+
+        & p {
+          border-bottom: 2px solid #EEE;
+          color: #AAA;
+          font-size: 17px;
+          padding: 10px;
+        }
+      }
+    }
   }
 }
-
-.dock {
-  border-top: 4px solid rgba(255, 255, 255, 0.4);
-  height: 100px;
-  width: 95%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  & img {
-    height: 80px;
-  }
-}
-
-
 
 .navigation {
-  background-color: rgba(0,0,0, 1);
+  background-color: rgba(0,0,0, .7);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -112,4 +158,8 @@ body {
   & img {
     height: 75%;
   }
+}
+
+.hidden {
+  display: none;
 }
