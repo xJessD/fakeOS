@@ -148,11 +148,12 @@ body {
     position: relative;
     height: 100%;
     overflow-y: hidden;
+    padding-top: 2%;
 
     &__content {
       padding-top: 2%;
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       gap: 20px;
       flex-wrap: wrap;
       overflow-y: scroll;
@@ -164,21 +165,40 @@ body {
 
       & .contact {
         color: white;
-        background-color: orange;
+        background-color: lightseagreen;
         width: 45%;
         aspect-ratio: 3 / 2 ;
-        padding: 1%;
+        padding: 3% 1% 1% 1%;
         display: flex;
         flex-flow: wrap;
         justify-content: center;
-        
+
+        &__name {
+          padding-top: 2%;
+          padding-left: 2%;
+
+          & h4 {
+            font-size: 27px;
+            font-weight: normal;
+          }  
+
+          & p {
+            font-size: 20px;
+          }
+        }
+
         & .profile {
           margin: 5% 0;
+
+
+        }
+
+        & img {
+          width: 30%;
         }
 
         & img.invert {
           filter: invert(1);
-          width: 50%;
         }
 
         &__name {
@@ -186,6 +206,14 @@ body {
 
         }
       }
+
+      & .contact:nth-of-type(1) { background-color: lightgreen; }
+      & .contact:nth-of-type(2) { background-color: lightblue; }
+      & .contact:nth-of-type(3) { background-color: lightcoral; }
+      & .contact:nth-of-type(4) { background-color: paleturquoise }
+      & .contact:nth-of-type(6) { background-color: palevioletred }
+      & .contact:nth-of-type(7) { background-color: lightsalmon }
+      & .contact:nth-of-type(8) { background-color: palegreen }
     }
   }
 
