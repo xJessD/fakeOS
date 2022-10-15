@@ -23,6 +23,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 .container {
@@ -34,6 +35,7 @@ body {
   height: 90vh;
   aspect-ratio: 9/16;
   min-height: 750px;
+  overflow: hidden;
 }
 .container__actionBar {
   background-color: rgb(0, 0, 0);
@@ -69,16 +71,30 @@ body {
 }
 .display__home .search {
   background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 5px;
+  border-radius: 7px;
   padding: 10px 20px;
   height: 55px;
   width: 85%;
-  font-family: "Catull Regular";
-  font-size: 40px;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.display__home .search input {
+  all: unset;
+  width: 80%;
+  height: 100%;
+  padding-top: 2%;
+}
+.display__home .search input::placeholder {
+  height: 100%;
+  font-family: "Catull Regular";
+  font-size: 40px;
+  color: white;
+  opacity: 0.8;
+}
+.display__home .search button {
+  all: unset;
 }
 .display__home .search img {
   height: 35px;
@@ -96,15 +112,28 @@ body {
 .display__home .dock img {
   height: 80px;
 }
+.display__home .dock img:hover {
+  filter: drop-shadow(3px 3px 5px #666666);
+  transform: translate(0, -2px);
+  transition: all 0.25s ease-in-out;
+}
 .display #dailerModal {
   background-color: #FFF;
   position: relative;
   height: 100%;
+  overflow-y: hidden;
 }
 .display #dailerModal__content {
   padding-top: 2%;
   display: flex;
   justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+.display #dailerModal__content::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
 }
 .display #dailerModal__content .contact {
   color: white;
@@ -173,16 +202,4 @@ body {
 
 .hidden {
   display: none;
-}
-
-#extra {
-  background: #DDD;
-  color: #111;
-  position: fixed;
-  padding: 10px;
-  left: 3%;
-  bottom: 3%;
-}
-#extra li {
-  font-size: 20px;
 }
