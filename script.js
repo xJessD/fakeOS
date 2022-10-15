@@ -49,3 +49,19 @@ const resetAll = () => {
 homeBtn.addEventListener("click", goHome);
 dialerBtn.addEventListener("click", showDailer);
 ytIcon.addEventListener("click", showYoutube); 
+
+
+
+
+const form = document.getElementById("form");
+const formQ = document.getElementById("query");
+const google = "https://www.google.com/search?q=";
+
+const onSubmit = (event) => {
+  event.preventDefault();
+  const url = google + formQ.value;
+  const win = window.open(url, '_blank');
+  win.focus();
+}
+
+form.addEventListener('submit', onSubmit);
