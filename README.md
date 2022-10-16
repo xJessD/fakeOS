@@ -2,6 +2,9 @@
 # Fake OS
 
 ### Recreating an Android OS in HTML, SCSS and JS.
+
+[View it live here](https://xjessd.github.io/fakeOS/)
+
 Inside is a project where we basically create a Fake OS using what we've learnt so far with HTML, SCSS and JS.
 
 Some of my earliest smartphones have been the Nexus 5, and Nexus 6P, which to this day are some of my favourite devices. To my disappointment Google scrapped the Nexus line to make way for the Pixel line. 
@@ -12,10 +15,15 @@ So as a homage to Android, that is what I'll be recreating for this project. Fol
 ### Functionality
 
 #### Current Functionality
+- Action Bar Opens
+- Volume Toggles
+- Airplane Mode toggles (incomplete)
 - Search Bar (google searches into new tab currently)
+- Back Button
 - Home Button
 - Youtube App 
 - Dailer / Contacts App
+- Youtube stops playing on exit
 
 
 ### Resources
@@ -33,3 +41,5 @@ Where possible, icon files have been taken from an unpacked Android distribution
 [Android UI Design Kit 4.4](https://androiduiux.com/2014/01/10/android-ui-design-kit-for-photoshop-4-4-free-download/)
 
 [Ice Cream Sandwich Wallpapers](https://forum.xda-developers.com/t/ice-cream-sandwich-wallpapers-here-from-the-nexus-prime.1297586/)
+
+[Android Action Bar Icons](https://wireframesketcher.com/mockups/android-action-bar-icons.html)

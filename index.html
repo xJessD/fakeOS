@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <script src="./script.js" defer></script>
+    <script type="module" src="./script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -16,6 +16,8 @@
     <div id="container" class="container">
       <nav id="container__actionBar" class="container__actionBar">
         <ul id="container__actionBar__list">
+          <li id="volume"></li>
+          <li id="airplane"></li>
           <li class="wifi"><img src="./assets/Black_3_WifiBars@2x.png"></li>
           <li class="mobileData"><img src="./assets/Black_4_Bars@2x.png"></li>
           <li class="battery"><img src="./assets/Black_BatteryDrainingBG@2x.png"></li>
@@ -26,7 +28,7 @@
           <img src="./assets/ai-network-cell.svg">
           <img src="./assets/ai-bluetooth-connected.svg">
           <img src="./assets/ai-screen-rotation.svg">
-          <img src="./assets/ai-airplane-mode-off.svg">
+          <img id="settings_airplane" class="off" src="./assets/ai-airplane-mode-off.svg">
           <img src="./assets/ai-brightness-medium.svg">
           <img src="./assets/ai-location-found.svg">
           <img id="settings_volume" class="vol-on" src="./assets/ai-volume-on.svg">
@@ -163,7 +165,7 @@
 
       
       <nav class="navigation">
-        <img src="./assets/nav_back_v2.png">
+        <img id="navigation__back" src="./assets/nav_back_v2.png">
         <img id="navigation__home" src="./assets/nav_home_v2.png">
         <img src="./assets/nav_all_v2.png">
     </nav><!-- navigation end -->
