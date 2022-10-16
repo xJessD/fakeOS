@@ -246,12 +246,59 @@ body {
           padding: 10px;
         }
 
-        & p {
-          border-bottom: 2px solid #EEE;
+        & span {
           color: #AAA;
           font-size: 17px;
           padding: 10px;
         }
+
+        & .votes {
+          margin-top: 2%;
+          padding: 2% 0;
+          border-top: 2px solid #EEE;
+
+          & img {
+            height: 20px;
+            opacity: 70%;
+          }
+
+          & img:nth-of-type(2) {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      &__subs {
+        margin-top: 2%;
+        box-shadow: 0 0 10px #EEE;
+        padding: 20px;
+        width: 92%;
+        background-color: #FFF;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & img {
+        width: 10%;
+        margin-right: 2%;
+        }
+
+        & p {
+          width: 80%;
+
+          & span {
+            color: #AAA;
+            font-size: 19px;
+          }
+        }
+
+        & button {
+          font-size: 18px;
+          text-transform: uppercase;
+          padding: 15px;
+          width: 30%;
+        }
+
       }
     }
   }
