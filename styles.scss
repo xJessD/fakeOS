@@ -1,22 +1,15 @@
+@use "./modules/mixins";
+@use "./modules/palette.scss";
 
 $action-b-height: 50px;
 $nav-height: 95px;
-$ui-color: #33B5E5;
+
 
 @font-face {
   font-family: 'Catull Regular';
   font-style: normal;
   font-weight: normal;
   src: local('Catull Regular'), url('./assets/Catull.woff') format('woff');
-  }
-
-
-  @font-face {
-    font-family: 'android-icons';
-    src: url('../font/android-icons.eot?56898335'),
-         url('../font/android-icons.woff?56898335') format('woff');
-    font-weight: normal;
-    font-style: normal;
   }
 
 * {
@@ -48,71 +41,82 @@ body {
 
   &__actionBar {
     background-color: rgba(0,0,0,1);
-    color: $ui-color;
+    color: palette.$cyan-process;
     height: 50px;
     position: relative;
     z-index: 50;
+
   
     & ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: right;
-      align-items: center;
+      @include mixins.flex-box(row, right, center, nowrap);
       height: 100%;
       margin-right: 10px;
   
         & li {
           line-height: 75%;
           margin-left: 5px;
+          
+          &.off {
+            opacity: 0;
+            visibility: hidden;
+            width: 0;
+            transition: opacity .5s ease-in-out;
+            
+          }
+      
+          &.on {
+            opacity: 1;
+            visibility: visible;
+            width: auto;
+            transition: opacity .5s ease-in-out;
+          }
+          
         }
   
         & img {
-          filter: invert(100%);
+          filter: invert(1);
         }
     }
 
     &__settings {
+      @include mixins.flex-box(row, space-evenly, center, wrap);
       background-color: rgba(0,0,0, .7);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
       padding: 3%;
       
-      & img {
-        background-color: rgba(white, .8);
-        filter: invert(1);
+      & div {
+        @include mixins.flex-box($justify: center);
+        background: rgba(0,0,0, .7);
         width: 20%;
         padding: 5%;
         margin: 2% 0;
+        transition: opacity .2s ease-in-out;
+
+        & img {
+          width: 65%;
+          filter: invert(1);
+          opacity: 1;
+        }
       }
     }
   }
 }
 
-
-
 .display {
   height: calc(100% - 95px - 50px);
 
   &__home {
-    //background-color: rgba(orange, .9);
+    @include mixins.flex-box(column, space-between, center, nowrap);
     height: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     padding-top: 5%;
 
     & .search {
+      @include mixins.flex-box(row, space-between, center, nowrap);
       background-color: rgba( 255, 255, 255, .4);
       border-radius: 7px;
       padding: 10px 20px;
       height: 55px;
       width: 85%;
       color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
 
       & input {
         all: unset;
@@ -140,20 +144,20 @@ body {
     }
   
     & .dock {
+      @include mixins.flex-box(row, space-around, center, nowrap);
       border-top: 4px solid rgba(255, 255, 255, 0.4);
       height: 100px;
       width: 95%;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
     
       & img {
         height: 80px;
+        filter: drop-shadow(3px 3px 5px #222);
+        transition: all .2s ease-in-out;
         
 
         &:hover {
-          filter: drop-shadow(3px 3px 5px #666666);
+          filter: drop-shadow(3px 3px 5px #333);
           transform: translate(0, -2px);
           transition: all .25s ease-in-out;
         }
@@ -169,11 +173,9 @@ body {
     padding-top: 2%;
 
     &__content {
+      @include mixins.flex-box(row, space-evenly, center, wrap);
       padding-top: 2%;
-      display: flex;
-      justify-content: space-evenly;
       gap: 20px;
-      flex-wrap: wrap;
       overflow-y: scroll;
 
       &::-webkit-scrollbar {
@@ -182,14 +184,12 @@ body {
       }
 
       & .contact {
+        @include mixins.flex-box(row, center, center, wrap);
         color: white;
-        background-color: lightseagreen;
         width: 45%;
         aspect-ratio: 3 / 2 ;
         padding: 3% 1% 1% 1%;
-        display: flex;
-        flex-flow: wrap;
-        justify-content: center;
+        transition: opacity .4s ease-in-out;
 
         &__name {
           padding-top: 2%;
@@ -206,9 +206,8 @@ body {
         }
 
         & .profile {
+          font-size: 80px;
           margin: 5% 0;
-
-
         }
 
         & img {
@@ -223,15 +222,85 @@ body {
           width: 100%;
 
         }
+
+        &:hover {
+          opacity: .7;
+          transition: opacity .4s ease-in-out;
+        }
       }
 
-      & .contact:nth-of-type(1) { background-color: lightgreen; }
-      & .contact:nth-of-type(2) { background-color: lightblue; }
-      & .contact:nth-of-type(3) { background-color: lightcoral; }
-      & .contact:nth-of-type(4) { background-color: paleturquoise }
-      & .contact:nth-of-type(6) { background-color: palevioletred }
-      & .contact:nth-of-type(7) { background-color: lightsalmon }
-      & .contact:nth-of-type(8) { background-color: palegreen }
+      & .contact:nth-of-type(1) { background-color: palette.$cyan-process; }
+      & .contact:nth-of-type(2) { background-color: palette.$outer-space-crayola; }
+      & .contact:nth-of-type(3) { background: url("./assets/p2.png"); }
+      & .contact:nth-of-type(5) { background-color: palette.$sandy-brown; }
+      & .contact:nth-of-type(4) { background-color: palette.$tea-green; }
+      & .contact:nth-of-type(6) { background: url("./assets/p4.png");  }
+      & .contact:nth-of-type(7) { background-color: palette.$cambridge-blue; }
+      & .contact:nth-of-type(8) { background: url("./assets/p3.png"); }
+    }
+
+
+  }
+
+  & .messageModal {
+    background: #F8F8F8;
+    height: 100%;
+
+    &__content {
+      @include mixins.flex-box(column, center, center, nowrap);
+      transition: all .3s ease-in-out;
+
+        &__messages {
+          box-shadow: 0 0 10px #EEE;
+          background-color: #FFF;
+          width: 85%;
+          padding: 3%;
+          margin-top: 5%;
+
+          & h2 {
+            width: 100%;
+            font-weight: normal;
+            font-size: 25px;
+            
+            &::after {
+              content: attr(data-time);
+              position: relative;
+              left: 55%;
+            }
+          }
+
+          & h3 {
+            font-size: 20px;
+            margin: 2% 0;
+            text-transform: uppercase;
+          }
+
+          p {
+            color: #777;
+          }
+
+          &:hover {
+            scale: 1.02;
+            transition: all .3s ease-in-out;
+          }
+        }
+
+        &__send {
+          @include mixins.flex-box(row, space-between, center, wrap);
+          position: relative;
+          top: 60px;
+          z-index: 40;
+
+          & h2 {
+            font-weight: bold;
+            margin-bottom: 3%;
+            width: 100%;
+          }
+
+          & input {
+            width: 80%;
+          }
+        }
     }
   }
 
@@ -239,12 +308,17 @@ body {
     background-color: #F8F8F8;
     position: relative;
     height: 100%;
-    z-index: 20;
+
+    & .card {
+      margin-top: 3%;
+      box-shadow: 0 0 10px #EEE;
+      width: 90%;
+      background-color: #FFF;
+      padding: 15px;
+    }
 
     &__content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include mixins.flex-box(column, center, center, nowrap);
 
       &__video {
         margin-top: 2%;
@@ -253,12 +327,6 @@ body {
       }
 
       &__title {
-        margin-top: 2%;
-        box-shadow: 0 0 10px #EEE;
-        padding: 10px;
-        width: 92%;
-        background-color: #FFF;
-
         & h2 {
           font-weight: normal;
           padding: 10px;
@@ -287,14 +355,7 @@ body {
       }
 
       &__subs {
-        margin-top: 2%;
-        box-shadow: 0 0 10px #EEE;
-        padding: 20px;
-        width: 92%;
-        background-color: #FFF;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include mixins.flex-box(row, space-between, center, nowrap);
 
         & img {
         width: 10%;
@@ -318,16 +379,43 @@ body {
         }
 
       }
+
+      &__others {
+        @include mixins.flex-box(row, space-between, center, wrap);
+        
+
+        & h2 {
+          border-bottom: 2px solid #EEE;
+          width: 100%;
+          margin-bottom: 2%;
+          font-weight: normal;
+          padding: 1%;
+          text-transform: uppercase;
+        }
+        & img {
+          width: 30%;
+        }  
+
+        h3 {
+          width: 65%;
+          font-weight: normal;
+          font-size: 20px;
+
+          & span {
+            font-size: 19px;
+            color: #AAA;
+          }
+        }
+      }
     }
   }
 }
 
 .navigation {
+  @include mixins.flex-box(row, space-around, center, nowrap);
   background-color: rgba(0,0,0, .7);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   height: 95px;
+  z-index: 30;
   
 
   & img {
@@ -337,5 +425,8 @@ body {
 
 .hidden {
   display: none;
+  height: 0;
+  opacity: 0;
+  transition: opacity .2s linear;
 }
 

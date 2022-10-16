@@ -1,14 +1,12 @@
+/* SCSS HEX */
+/* SCSS HSL */
+/* SCSS RGB */
+/* SCSS Gradient */
 @font-face {
   font-family: "Catull Regular";
   font-style: normal;
   font-weight: normal;
   src: local("Catull Regular"), url("./assets/Catull.woff") format("woff");
-}
-@font-face {
-  font-family: "android-icons";
-  src: url("../font/android-icons.eot?56898335"), url("../font/android-icons.woff?56898335") format("woff");
-  font-weight: normal;
-  font-style: normal;
 }
 * {
   margin: 0;
@@ -39,14 +37,14 @@ body {
 }
 .container__actionBar {
   background-color: rgb(0, 0, 0);
-  color: #33B5E5;
+  color: rgb(51, 181, 229);
   height: 50px;
   position: relative;
   z-index: 50;
 }
 .container__actionBar ul {
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
   justify-content: right;
   align-items: center;
   height: 100%;
@@ -56,45 +54,68 @@ body {
   line-height: 75%;
   margin-left: 5px;
 }
+.container__actionBar ul li.off {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.container__actionBar ul li.on {
+  opacity: 1;
+  visibility: visible;
+  width: auto;
+  transition: opacity 0.5s ease-in-out;
+}
 .container__actionBar ul img {
-  filter: invert(100%);
+  filter: invert(1);
 }
 .container__actionBar__settings {
-  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 3%;
 }
-.container__actionBar__settings img {
-  background-color: rgba(255, 255, 255, 0.8);
-  filter: invert(1);
+.container__actionBar__settings div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
   width: 20%;
   padding: 5%;
   margin: 2% 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.container__actionBar__settings div img {
+  width: 65%;
+  filter: invert(1);
+  opacity: 1;
 }
 
 .display {
   height: calc(100% - 95px - 50px);
 }
 .display__home {
-  height: 95%;
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
+  height: 95%;
   padding-top: 5%;
 }
 .display__home .search {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 7px;
   padding: 10px 20px;
   height: 55px;
   width: 85%;
   color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .display__home .search input {
   all: unset;
@@ -117,19 +138,22 @@ body {
   filter: invert(1);
 }
 .display__home .dock {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
   border-top: 4px solid rgba(255, 255, 255, 0.4);
   height: 100px;
   width: 95%;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
 }
 .display__home .dock img {
   height: 80px;
+  filter: drop-shadow(3px 3px 5px #222);
+  transition: all 0.2s ease-in-out;
 }
 .display__home .dock img:hover {
-  filter: drop-shadow(3px 3px 5px #666666);
+  filter: drop-shadow(3px 3px 5px #333);
   transform: translate(0, -2px);
   transition: all 0.25s ease-in-out;
 }
@@ -141,11 +165,12 @@ body {
   padding-top: 2%;
 }
 .display #dailerModal__content {
-  padding-top: 2%;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-evenly;
+  align-items: center;
+  padding-top: 2%;
   gap: 20px;
-  flex-wrap: wrap;
   overflow-y: scroll;
 }
 .display #dailerModal__content::-webkit-scrollbar {
@@ -153,14 +178,15 @@ body {
   background-color: transparent;
 }
 .display #dailerModal__content .contact {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
   color: white;
-  background-color: lightseagreen;
   width: 45%;
   aspect-ratio: 3/2;
   padding: 3% 1% 1% 1%;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
+  transition: opacity 0.4s ease-in-out;
 }
 .display #dailerModal__content .contact__name {
   padding-top: 2%;
@@ -174,6 +200,7 @@ body {
   font-size: 20px;
 }
 .display #dailerModal__content .contact .profile {
+  font-size: 80px;
   margin: 5% 0;
 }
 .display #dailerModal__content .contact img {
@@ -185,49 +212,113 @@ body {
 .display #dailerModal__content .contact__name {
   width: 100%;
 }
+.display #dailerModal__content .contact:hover {
+  opacity: 0.7;
+  transition: opacity 0.4s ease-in-out;
+}
 .display #dailerModal__content .contact:nth-of-type(1) {
-  background-color: lightgreen;
+  background-color: rgb(51, 181, 229);
 }
 .display #dailerModal__content .contact:nth-of-type(2) {
-  background-color: lightblue;
+  background-color: rgb(31, 54, 61);
 }
 .display #dailerModal__content .contact:nth-of-type(3) {
-  background-color: lightcoral;
+  background: url("./assets/p2.png");
+}
+.display #dailerModal__content .contact:nth-of-type(5) {
+  background-color: rgb(241, 153, 83);
 }
 .display #dailerModal__content .contact:nth-of-type(4) {
-  background-color: paleturquoise;
+  background-color: rgb(207, 224, 195);
 }
 .display #dailerModal__content .contact:nth-of-type(6) {
-  background-color: palevioletred;
+  background: url("./assets/p4.png");
 }
 .display #dailerModal__content .contact:nth-of-type(7) {
-  background-color: lightsalmon;
+  background-color: rgb(158, 193, 163);
 }
 .display #dailerModal__content .contact:nth-of-type(8) {
-  background-color: palegreen;
+  background: url("./assets/p3.png");
+}
+.display .messageModal {
+  background: #F8F8F8;
+  height: 100%;
+}
+.display .messageModal__content {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+.display .messageModal__content__messages {
+  box-shadow: 0 0 10px #EEE;
+  background-color: #FFF;
+  width: 85%;
+  padding: 3%;
+  margin-top: 5%;
+}
+.display .messageModal__content__messages h2 {
+  width: 100%;
+  font-weight: normal;
+  font-size: 25px;
+}
+.display .messageModal__content__messages h2::after {
+  content: attr(data-time);
+  position: relative;
+  left: 55%;
+}
+.display .messageModal__content__messages h3 {
+  font-size: 20px;
+  margin: 2% 0;
+  text-transform: uppercase;
+}
+.display .messageModal__content__messages p {
+  color: #777;
+}
+.display .messageModal__content__messages:hover {
+  scale: 1.02;
+  transition: all 0.3s ease-in-out;
+}
+.display .messageModal__content__send {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 60px;
+  z-index: 40;
+}
+.display .messageModal__content__send h2 {
+  font-weight: bold;
+  margin-bottom: 3%;
+  width: 100%;
+}
+.display .messageModal__content__send input {
+  width: 80%;
 }
 .display #ytModal {
   background-color: #F8F8F8;
   position: relative;
   height: 100%;
-  z-index: 20;
+}
+.display #ytModal .card {
+  margin-top: 3%;
+  box-shadow: 0 0 10px #EEE;
+  width: 90%;
+  background-color: #FFF;
+  padding: 15px;
 }
 .display #ytModal__content {
   display: flex;
-  flex-direction: column;
+  flex-flow: column nowrap;
+  justify-content: center;
   align-items: center;
 }
 .display #ytModal__content__video {
   margin-top: 2%;
   width: 100%;
   aspect-ratio: 3/2;
-}
-.display #ytModal__content__title {
-  margin-top: 2%;
-  box-shadow: 0 0 10px #EEE;
-  padding: 10px;
-  width: 92%;
-  background-color: #FFF;
 }
 .display #ytModal__content__title h2 {
   font-weight: normal;
@@ -251,12 +342,8 @@ body {
   transform: rotate(180deg);
 }
 .display #ytModal__content__subs {
-  margin-top: 2%;
-  box-shadow: 0 0 10px #EEE;
-  padding: 20px;
-  width: 92%;
-  background-color: #FFF;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -277,13 +364,41 @@ body {
   padding: 15px;
   width: 30%;
 }
+.display #ytModal__content__others {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.display #ytModal__content__others h2 {
+  border-bottom: 2px solid #EEE;
+  width: 100%;
+  margin-bottom: 2%;
+  font-weight: normal;
+  padding: 1%;
+  text-transform: uppercase;
+}
+.display #ytModal__content__others img {
+  width: 30%;
+}
+.display #ytModal__content__others h3 {
+  width: 65%;
+  font-weight: normal;
+  font-size: 20px;
+}
+.display #ytModal__content__others h3 span {
+  font-size: 19px;
+  color: #AAA;
+}
 
 .navigation {
-  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
   height: 95px;
+  z-index: 30;
 }
 .navigation img {
   height: 75%;
@@ -291,4 +406,7 @@ body {
 
 .hidden {
   display: none;
+  height: 0;
+  opacity: 0;
+  transition: opacity 0.2s linear;
 }
