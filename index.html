@@ -13,15 +13,26 @@
   </head>
 
   <body>
-    <div class="container">
-      <nav class="container__actionBar">
-        <ul>
-          <li></li>
+    <div id="container" class="container">
+      <nav id="container__actionBar" class="container__actionBar">
+        <ul id="container__actionBar__list">
           <li class="wifi"><img src="./assets/Black_3_WifiBars@2x.png"></li>
           <li class="mobileData"><img src="./assets/Black_4_Bars@2x.png"></li>
           <li class="battery"><img src="./assets/Black_BatteryDrainingBG@2x.png"></li>
           <li><div id="clock"></div></li>
         </ul>
+        <div id="container__actionBar__settings" class="container__actionBar__settings hidden">
+          <img src="./assets//ai-network-wifi.svg">
+          <img src="./assets/ai-network-cell.svg">
+          <img src="./assets/ai-bluetooth-connected.svg">
+          <img src="./assets/ai-screen-rotation.svg">
+          <img src="./assets/ai-airplane-mode-off.svg">
+          <img src="./assets/ai-brightness-medium.svg">
+          <img src="./assets/ai-location-found.svg">
+          <img id="settings_volume" class="vol-on" src="./assets/ai-volume-on.svg">
+          <img src="./assets/ai-settings.svg">
+          
+        </div>
       </nav><!-- actionBar end -->
 
       <div class="display">

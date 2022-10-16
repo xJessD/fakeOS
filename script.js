@@ -56,6 +56,9 @@ const form = document.getElementById("form");
 const formQ = document.getElementById("query");
 const google = "https://www.google.com/search?q=";
 
+/**
+ * Function for google search bar functionality. Currently opens in new tab, but ideally will be updated to open in a 'chrome app'
+ */
 const onSubmit = (event) => {
   event.preventDefault();
   const url = google + formQ.value;
@@ -73,3 +76,42 @@ const stopYoutube = () => {
   const temp = iframe.src;
   iframe.src = temp;
 }
+
+const toggleActionBar = () => {
+  actionBarSettings.classList.toggle('hidden');
+}
+
+const container = document.getElementById("container");
+const actionBar = document.getElementById("container__actionBar");
+const actionBarList = document.getElementById("container__actionBar__list");
+const actionBarSettings = document.getElementById("container__actionBar__settings");
+const volume = document.getElementById("settings_volume");
+
+actionBarList.addEventListener("click", toggleActionBar);
+actionBarSettings.addEventListener("click", () => {
+  actionBarSettings.classList.remove('hidden');
+});
+
+container.addEventListener("click", () => {
+  if (!actionBarSettings.classList.contains("hidden")) {
+    //actionBarSettings.classList.add("hidden");
+  }
+});
+
+volume.addEventListener("click", () => {
+  let on = "./assets/ai-volume-on.svg";
+  let muted = "./assets/ai-volume-muted.svg";
+
+  if (volume.classList.contains("vol-on")) {
+    volume.src = muted;
+    volume.classList.remove("vol-on");
+    volume.classList.add("muted");
+  } else if (volume.classList.contains("muted")) {
+    volume.src = on;
+    volume.classList.remove("muted");
+    volume.classList.add("vol-on");
+  }
+})
+
+// actionBar.addEventListener("mouseover", () => { actionBarSettings.classList.remove('hidden');});
+// document.addEventListener("click", () => {actionBarSettings.classList.add('hidden')});
