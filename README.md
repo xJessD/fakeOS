@@ -43,3 +43,7 @@ Where possible, icon files have been taken from an unpacked Android distribution
 [Ice Cream Sandwich Wallpapers](https://forum.xda-developers.com/t/ice-cream-sandwich-wallpapers-here-from-the-nexus-prime.1297586/)
 
 [Android Action Bar Icons](https://wireframesketcher.com/mockups/android-action-bar-icons.html)
+
+### Bugs / Issues
+#### Action Bar icons not updating
+Action bar icons are not updating based on settings through GitHub pages. This functionality works localling. 
