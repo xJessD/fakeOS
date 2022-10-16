@@ -1,7 +1,7 @@
 #
 # Fake OS
-
-### Recreating an Android OS in HTML, SCSS and JS.
+#
+## Recreating an Android OS in HTML, SCSS and JS.
 
 [View it live here](https://xjessd.github.io/fakeOS/)
 
@@ -10,11 +10,10 @@ Inside is a project where we basically create a Fake OS using what we've learnt 
 Some of my earliest smartphones have been the Nexus 5, and Nexus 6P, which to this day are some of my favourite devices. To my disappointment Google scrapped the Nexus line to make way for the Pixel line. 
 
 So as a homage to Android, that is what I'll be recreating for this project. Following the provided screenshot, this is mainly based on Google's Holo Design spanning from Android 4.0 (Ice Cream Sandwich) to Android 4.4 (Kitkat).
-
-
-### Functionality
-
-#### Current Functionality
+#
+#
+## Functionality
+### Current Functionality
 - Action Bar Opens
 - Volume Toggles
 - Airplane Mode toggles (incomplete)
@@ -24,9 +23,14 @@ So as a homage to Android, that is what I'll be recreating for this project. Fol
 - Youtube App 
 - Dailer / Contacts App
 - Youtube stops playing on exit
-
-
-### Resources
+#
+#
+## Bugs / Issues
+### Action Bar icons not updating
+Action bar icons are not updating based on settings through GitHub pages. This functionality works localling. 
+#
+#
+## Resources
 Where possible, icon files have been taken from an unpacked Android distribution. Otherwise icons have been downloaded from DeviantArt. 
 
 
@@ -44,6 +48,3 @@ Where possible, icon files have been taken from an unpacked Android distribution
 
 [Android Action Bar Icons](https://wireframesketcher.com/mockups/android-action-bar-icons.html)
 
-### Bugs / Issues
-#### Action Bar icons not updating
-Action bar icons are not updating based on settings through GitHub pages. This functionality works localling. 

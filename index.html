@@ -16,23 +16,23 @@
     <div id="container" class="container">
       <nav id="container__actionBar" class="container__actionBar">
         <ul id="container__actionBar__list">
-          <li id="volume"></li>
-          <li id="airplane"></li>
-          <li class="wifi"><img src="./assets/Black_3_WifiBars@2x.png"></li>
+          <li id="volume" class="off"><img src="assets/ai-volume-muted.svg"></li>
+          <li id="airplane" class="off"><img src="./assets/ai-airplane-mode-on.svg"></li>
+          <li class="wifi" class="off"><img src="./assets/Black_3_WifiBars@2x.png"></li>
           <li class="mobileData"><img src="./assets/Black_4_Bars@2x.png"></li>
           <li class="battery"><img src="./assets/Black_BatteryDrainingBG@2x.png"></li>
           <li><div id="clock"></div></li>
         </ul>
         <div id="container__actionBar__settings" class="container__actionBar__settings hidden">
-          <img src="./assets//ai-network-wifi.svg">
-          <img src="./assets/ai-network-cell.svg">
-          <img src="./assets/ai-bluetooth-connected.svg">
-          <img src="./assets/ai-screen-rotation.svg">
-          <img id="settings_airplane" class="off" src="./assets/ai-airplane-mode-off.svg">
-          <img src="./assets/ai-brightness-medium.svg">
-          <img src="./assets/ai-location-found.svg">
-          <img id="settings_volume" class="vol-on" src="./assets/ai-volume-on.svg">
-          <img src="./assets/ai-settings.svg">
+          <div><img src="./assets//ai-network-wifi.svg"></div>
+          <div><img src="./assets/ai-network-cell.svg"></div>
+          <div><img src="./assets/ai-bluetooth-connected.svg"></div>
+          <div><img src="./assets/ai-screen-rotation.svg"></div>
+          <div><img id="settings_airplane" class="off" src="./assets/ai-airplane-mode-off.svg"></div>
+          <div><img class="off" src="./assets/ai-brightness-medium.svg"><img src="./assets/ai-brightness-high.svg"></div>
+          <div><img src="./assets/ai-location-found.svg"></div>
+          <div><img id="settings_volume" class="on" src="./assets/ai-volume-on.svg"></div>
+          <div><img src="./assets/ai-settings.svg"></div>
           
         </div>
       </nav><!-- actionBar end -->
@@ -47,7 +47,7 @@
 
           <nav class="dock">
             <img src="./assets/Phone.png" id="dailerIcon">
-            <img src="./assets/Messenger.png">
+            <img src="./assets/Messenger.png" id="messagesIcon">
             <img src="./assets/Drawer.png">
             <img src="./assets/Gmail.png">
             <img src="./assets/Youtube.png" class="icon" id="ytIcon">
@@ -60,7 +60,7 @@
             <div class="contact">
               <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
               <div class="contact__name">
-                <h4>Jessica D</h4>
+                <h4>Rachel T</h4>
                 <p>Mobile</p>
               </div>
             </div> 
@@ -68,7 +68,15 @@
             <div class="contact">
               <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
               <div class="contact__name">
-                <h4>Jessica D</h4>
+                <h4>Mum</h4>
+                <p>Mobile</p>
+              </div>
+            </div> 
+
+            <div class="contact">
+              <div class="profile"></div>
+              <div class="contact__name">
+                <h4>Ann C</h4>
                 <p>Mobile</p>
               </div>
             </div> 
@@ -76,7 +84,7 @@
             <div class="contact">
               <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
               <div class="contact__name">
-                <h4>Jessica D</h4>
+                <h4>Anthony T</h4>
                 <p>Mobile</p>
               </div>
             </div> 
@@ -84,39 +92,31 @@
             <div class="contact">
               <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
               <div class="contact__name">
-                <h4>Jessica D</h4>
+                <h4>Sis ✌️</h4>
                 <p>Mobile</p>
               </div>
             </div> 
 
             <div class="contact">
-              <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
+              <div class="profile"></div>
               <div class="contact__name">
-                <h4>Jessica D</h4>
+                <h4>Lily N</h4>
+                <p>Mobile</p>
+              </div>
+            </div>             
+
+            <div class="contact">
+              <div class="profile">C</div>
+              <div class="contact__name">
+                <h4>Chloe A</h4>
                 <p>Mobile</p>
               </div>
             </div> 
 
             <div class="contact">
-              <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
+              <div class="profile"></div>
               <div class="contact__name">
-                <h4>Jessica D</h4>
-                <p>Mobile</p>
-              </div>
-            </div> 
-
-            <div class="contact">
-              <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
-              <div class="contact__name">
-                <h4>Jessica D</h4>
-                <p>Mobile</p>
-              </div>
-            </div> 
-
-            <div class="contact">
-              <img src="./assets/android-contact_icon-icons.com_50531.png" class="profile invert">
-              <div class="contact__name">
-                <h4>Jessica D</h4>
+                <h4>Neithan N</h4>
                 <p>Mobile</p>
               </div>
             </div> 
@@ -126,11 +126,51 @@
         </div>
 
 
+        <div id="messageModal" class="messageModal modal hidden">
+          <div id="messageModal__content" class="messageModal__content">
+
+            <div class="messageModal__content__messages">
+              <h2 data-time="3hr ago">From: Lily N </h2>
+              <h3>No subject</h3>
+              <p>Haha yup see you tmr!</p>
+            </div>
+
+            <div class="messageModal__content__messages">
+              <h2 data-time="4:44AM">From: Paypal</h2>
+              <h3>You've sent a payment to Netflix PTY</h3>
+              <p>You're payment has been sent to...</p>
+            </div>
+
+            <div class="messageModal__content__messages">
+              <h2 data-time="1:05AM">From: Rachel</h2>
+              <h3>No subject</h3>
+              <p>You sent: Dude when are you working next?</p>
+            </div>
+
+            <div class="messageModal__content__messages">
+              <h2 data-time="1:05AM">From: Sis ✌️</h2>
+              <h3>No subject</h3>
+              <p><strong>Get some rice 🍚</strong></p>
+            </div>
+
+            <div class="messageModal__content__messages messageModal__content__send">
+              <h2>Send a message</h2>
+              <input type="text"><button>Send</button>
+            </div>
+
+          </div>
+
+
+
+        </div><!-- messageModal end -->
+
+
+
         <div id="ytModal" class="modal hidden">
           <div id="ytModal__content">
             <iframe id="ytModal__content__video" src="https://www.youtube.com/embed/LDU_Txk06tM"></iframe>
 
-          <div id="ytModal__content__title">
+          <div id="ytModal__content__title" class="card">
             <h2>
               Noisestorm - Crab Rave [Monstercat Release]
             </h2>
@@ -145,7 +185,7 @@
 
           </div>
 
-          <div id="ytModal__content__subs">
+          <div id="ytModal__content__subs" class="card">
             <img src="./assets/man (2).png">
             <p>Monstercat Instinct<br/>
               <span>900K Subscribers</span>
@@ -153,7 +193,12 @@
             <button>Subscribe</button>
           </div>
 
-          <div id="ytModal__content__others">
+          <div id="ytModal__content__others" class="card">
+            <h2>Suggestions</h2>
+            <img src="./assets/Screenshot_69.png">
+            <h3>Android 13 is here… and I like it!<br />
+              <span>Linus Tech Tips </span>
+            </h3>
             
           </div>
 
