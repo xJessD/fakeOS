@@ -243,6 +243,11 @@ body {
 .display .messageModal {
   background: #F8F8F8;
   height: 100%;
+  overflow-y: scroll;
+}
+.display .messageModal::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
 }
 .display .messageModal__content {
   display: flex;
@@ -255,18 +260,24 @@ body {
   box-shadow: 0 0 10px #EEE;
   background-color: #FFF;
   width: 85%;
+  max-width: 450px;
   padding: 3%;
   margin-top: 5%;
 }
 .display .messageModal__content__messages h2 {
   width: 100%;
   font-weight: normal;
+  margin-left: -30%;
   font-size: 25px;
 }
-.display .messageModal__content__messages h2::after {
+.display .messageModal__content__messages h2::before {
   content: attr(data-time);
+  display: inline-block;
+  width: 30%;
+  margin-bottom: -40px;
   position: relative;
-  left: 55%;
+  left: 100%;
+  text-align: right;
 }
 .display .messageModal__content__messages h3 {
   font-size: 20px;
@@ -286,7 +297,7 @@ body {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  top: 60px;
+  top: 10px;
   z-index: 40;
 }
 .display .messageModal__content__send h2 {
