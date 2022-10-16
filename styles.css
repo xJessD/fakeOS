@@ -217,11 +217,49 @@ body {
   font-weight: normal;
   padding: 10px;
 }
-.display #ytModal__content__title p {
-  border-bottom: 2px solid #EEE;
+.display #ytModal__content__title span {
   color: #AAA;
   font-size: 17px;
   padding: 10px;
+}
+.display #ytModal__content__title .votes {
+  margin-top: 2%;
+  padding: 2% 0;
+  border-top: 2px solid #EEE;
+}
+.display #ytModal__content__title .votes img {
+  height: 20px;
+  opacity: 70%;
+}
+.display #ytModal__content__title .votes img:nth-of-type(2) {
+  transform: rotate(180deg);
+}
+.display #ytModal__content__subs {
+  margin-top: 2%;
+  box-shadow: 0 0 10px #EEE;
+  padding: 20px;
+  width: 92%;
+  background-color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.display #ytModal__content__subs img {
+  width: 10%;
+  margin-right: 2%;
+}
+.display #ytModal__content__subs p {
+  width: 80%;
+}
+.display #ytModal__content__subs p span {
+  color: #AAA;
+  font-size: 19px;
+}
+.display #ytModal__content__subs button {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 15px;
+  width: 30%;
 }
 
 .navigation {

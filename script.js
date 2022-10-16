@@ -12,7 +12,7 @@ const time = () => {
   document.getElementById('clock').innerText =  `${hours}:${minutes}`;
 }
 
-setInterval(time, 30000); // As we are not displaying the seconds, we can update every 30s as every min does not display in real time
+setInterval(time, 10000); // As we are not displaying the seconds, we can update every 10s as every min does not display in real time
 time();
 
 
@@ -44,13 +44,12 @@ const resetAll = () => {
   homeScreen.classList.add("hidden");
   dailerModal.classList.add("hidden");
   ytModal.classList.add("hidden");
+  stopYoutube();
 }
 
 homeBtn.addEventListener("click", goHome);
 dialerBtn.addEventListener("click", showDailer);
 ytIcon.addEventListener("click", showYoutube); 
-
-
 
 
 const form = document.getElementById("form");
@@ -65,3 +64,12 @@ const onSubmit = (event) => {
 }
 
 form.addEventListener('submit', onSubmit);
+
+/**
+ * Automatically stops Youtube Videos on exit of app by re-initialising video source. Would be best to pause video instead, but works for now.
+ */
+const stopYoutube = () => {
+  const iframe = document.querySelector('iframe');
+  const temp = iframe.src;
+  iframe.src = temp;
+}
