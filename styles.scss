@@ -308,6 +308,12 @@ body {
     background-color: #F8F8F8;
     position: relative;
     height: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      background-color: transparent;
+    }
 
     & .card {
       margin-top: 3%;
