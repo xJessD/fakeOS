@@ -1,6 +1,6 @@
 #
 # Fake OS
-![Screenshot](/src/assets/Screenshot_114.png?raw=true "Site Preview")
+![Screenshot](/assets/Screenshot_114.png?raw=true "Site Preview")
 ## Recreating an Android OS in HTML, SCSS and JS.
 
 [View it live here](https://xjessd.github.io/fakeOS/)
