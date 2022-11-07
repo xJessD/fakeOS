@@ -1,6 +1,6 @@
 #
 # Fake OS
-#
+![Screenshot](/src/assets/Screenshot_114.png?raw=true "Site Preview")
 ## Recreating an Android OS in HTML, SCSS and JS.
 
 [View it live here](https://xjessd.github.io/fakeOS/)
@@ -28,7 +28,7 @@ So as a homage to Android, that is what I'll be recreating for this project. Fol
 #
 ## Bugs / Issues
 ### Action Bar icons not updating
-- Action bar icons are not updating based on settings through GitHub pages. This functionality works localling. 
+- Action bar icons are not updating based on settings through GitHub pages. This functionality works locally. 
 - Cannot transition nicely between apss due to using display: none. Would like to restructure completely
 - Quick settings cannot transition nicely as image change is currently done by changing img src in JS
 
